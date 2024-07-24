@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu VCF</title>
+    <style>
+        .menu {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            max-width: 800px;
+        }
+        .menu h2 {
+            margin-top: 0;
+        }
+        .button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        textarea, input[type="number"], input[type="text"], input[type="file"] {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 300px; /* Height of the textarea */
+            resize: vertical; /* Allow vertical resize */
+        }
+    </style>
+</head>
+<body>
+    <h1>Menu VCF</h1>
+    
+    <!-- Menu Pecah File VCF -->
+    <div class="menu" id="splitVCFMenu">
+        <h2>Pecah File VCF</h2>
+        <input type="file" id="vcfFileInput" />
+        <input type="number" id="contactsPerFile" placeholder="Kontak per file" min="1" />
+        <input type="text" id="splitFileNameInput" placeholder="Nama file VCF" />
+        <button id="splitButton" class="button">Pecah File VCF</button>
+        <input type="text" id="splitContactCount" placeholder="Jumlah kontak" readonly />
+        <button id="splitCountButton" class="button">Hitung Kontak</button>
+    </div>
+
+    <!-- Menu Konversi Teks ke VCF -->
+    <div class="menu" id="convertTXTMenu">
+        <h2>Konversi Teks ke VCF</h2>
+        <input type="file" id="txtFileInput" />
+        <textarea id="fileContent" placeholder="Isi file teks akan ditampilkan di sini..."></textarea>
+        <input type="text" id="convertFileNameInput" placeholder="Nama file VCF" />
+        <input type="text" id="contactNameInput" placeholder="Nama kontak" />
+        <button id="convertButton" class="button">Konversi ke VCF</button>
+        <input type="text" id="convertContactCount" placeholder="Jumlah kontak" readonly />
+        <button id="convertCountButton" class="button">Hitung Kontak</button>
+    </div>
+
+    <!-- Menu Gabungkan File TXT -->
+    <div class="menu" id="mergeTXTMenu">
+        <h2>Gabungkan File TXT</h2>
+        <input type="file" id="txtFilesInput" multiple />
+        <textarea id="mergedFileContent" placeholder="Isi file teks yang digabungkan akan ditampilkan di sini..."></textarea>
+        <input type="text" id="mergedFileNameInput" placeholder="Nama file gabungan" />
+        <button id="mergeButton" class="button">Gabungkan File TXT</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
